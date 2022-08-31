@@ -6,6 +6,7 @@ from selene.support.shared import browser
 
 from demoqa_tests.Controls import datepicker, tags_input, dropdown
 from demoqa_tests.utils import resource
+from utils import attach
 
 
 def test_register_student():
@@ -60,3 +61,6 @@ def test_register_student():
         table_rows(17).should(have.exact_text("Indonesia, Bali, Kuta"))
         table_rows(19).should(have.exact_text("NCR Delhi"))
 
+    attach.add_html(browser)
+    attach.add_screenshot(browser)
+    attach.add_logs(browser)
